@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Flask App!</h1>
+    <p>Click the button to call API:</p>
+    <button onclick="callApi()">Call /api/hello</button>
+    <p id="result"></p>
+
+    <script>
+        async function callApi() {
+            const res = await fetch('/api/hello');
+            const data = await res.json();
+            document.getElementById('result').innerText = data.message;
+        }
+    </script>
+</body>
+</html>
