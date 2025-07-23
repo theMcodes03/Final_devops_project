@@ -72,18 +72,34 @@ Ensure you have **Docker** and **Docker Compose** installed on your system:
     ```
 
 -----
+Azure VM Deployment (Demonstration Only)
+This project was successfully deployed on a Microsoft Azure Virtual Machine as a practical demonstration of cloud deployment and DevOps integration. The VM was later deallocated to prevent unnecessary billing.
 
-## AWS EC2 Deployment (Demonstration Only)
+Azure Deployment Process
+Provisioned an Ubuntu VM via the Azure Portal or Azure CLI.
 
-This project was successfully deployed on an AWS EC2 instance as a practical demonstration of **cloud integration**. The instance was **subsequently terminated** to optimize resource usage and prevent ongoing charges.
+Configured Network Security Groups (NSGs) to allow HTTP (port 80) traffic.
 
-The deployment process involved:
+Installed Docker & Docker Compose using the official installation scripts.
 
-  * Provisioning an Ubuntu EC2 instance.
-  * Installing Docker and Docker Compose.
-  * Cloning this repository onto the instance.
-  * Executing the application using `docker-compose`.
-  * Configuring AWS Security Groups to allow public access on port 80.
+Cloned the project repository onto the VM.
+
+Deployed the application using:
+
+bash
+Copy
+Edit
+docker-compose up --build -d
+Accessed the app publicly via the VM's public IP.
+
+Additional Azure Tools You Can Integrate:
+Azure CLI: To automate VM provisioning and resource management.
+
+Azure DevOps Pipelines: To create CI/CD workflows for build, test, and deployment stages.
+
+Azure Container Instances (ACI) or App Services: For scalable container deployment alternatives.
+
+Azure Monitor: For performance and health insights into your deployed containers.
 
 -----
 
